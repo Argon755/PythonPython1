@@ -18,7 +18,6 @@ cur = conn.cursor()
 # conn.commit()
 cur.execute("SELECT * FROM beton;")
 one_result = cur.fetchall()
-
 class Calc(QWidget):
     def __init__(self):
         super().__init__()
@@ -35,10 +34,10 @@ class Calc(QWidget):
 
     def returnres(self, result):
         self.textedit.setText(result)
-        text = open('zxc.txt')
+        text = open('zxc.txt','a+')
         history = text.read()
         text.close()
-        with open('zxc.txt', 'w'): pass
+        with open('zxc.txt', 'a+'): pass
 
         text = open('zxc.txt', 'a+')
         text.write(result)
